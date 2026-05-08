@@ -31,6 +31,7 @@ dependencies {
     testCompileOnly("org.projectlombok:lombok")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
     testAnnotationProcessor("org.projectlombok:lombok")
+    implementation("org.commonmark:commonmark:0.24.0")
 }
 
 tasks.withType<Test> {
