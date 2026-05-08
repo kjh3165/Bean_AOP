@@ -3,6 +3,7 @@ package com.back.bean_aop.domain.wiseeSaying.controller;
 import com.back.bean_aop.domain.wiseeSaying.entity.WiseSaying;
 import com.back.bean_aop.domain.wiseeSaying.service.WiseSayingService;
 import com.back.bean_aop.standard.util.service.MarkdownService;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -67,6 +68,7 @@ public class WiseSayingController {
                 """.formatted(wiseSaying.getId(), wiseSaying.getAuthor(), html);
     }
 
+    @Transactional
     @GetMapping("/wiseSayings/{id}/delete")
     @ResponseBody
     public String delete(@PathVariable int id) {
